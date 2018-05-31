@@ -28,3 +28,8 @@ Component1e = function (value) {
 export default function Component1f (value) {
   return <div>{value}</div>
 }
+
+// Exported named stateless component used in variable declaration returning conditional JSX
+export var Component1g = function (value) {
+    return true ? <div>{value}</div> : null
+}

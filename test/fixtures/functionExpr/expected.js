@@ -57,4 +57,14 @@ export default function Component1f(value) {
     value
   );
 }
+
 Component1f.displayName = "Component1f";
+// Exported named stateless component used in variable declaration returning conditional JSX
+export var Component1g = function (value) {
+  return true ? React.createElement(
+    "div",
+    null,
+    value
+  ) : null;
+};
+Component1g.displayName = "Component1g";

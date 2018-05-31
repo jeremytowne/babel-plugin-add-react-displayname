@@ -142,7 +142,9 @@ function doesReturnJSX (body) {
     var lastBlock = block.slice(0).pop()
 
     if (lastBlock.type === 'ReturnStatement') {
-      return lastBlock.argument !== null && lastBlock.argument.type === 'JSXElement'
+        return lastBlock.argument !== null && (lastBlock.argument.type === 'JSXElement' ||
+            (lastBlock.argument.type === 'ConditionalExpression' &&
+            (lastBlock.argument.consequent.type === 'JSXElement' || lastBlock.argument.alternate.type === 'JSXElement')))
     }
   }
 
